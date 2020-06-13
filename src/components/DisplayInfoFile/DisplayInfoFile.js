@@ -30,7 +30,7 @@ class DisplayInfoFile extends Component {
   // handleKeyPress = async (event, user, link) => {
     if (event.key === 'Enter') {
       console.log('Submit', this.props.user.mail, this.props.link);
-        const response = await fetch('http://localhost:3000/addcomment',{
+        const response = await fetch('https://git.heroku.com/orientation-back.git/addcomment',{
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -51,7 +51,7 @@ class DisplayInfoFile extends Component {
   handleChange =(y,idxComment,cellIndex) => {
     // console.log(y,cellIndex);
     // console.log(document.getElementById(`displaycomments`).children[cellIndex].children[1].textContent);
-    fetch('http://localhost:3000/updatecomment',{
+    fetch('https://git.heroku.com/orientation-back.git/updatecomment',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -67,7 +67,7 @@ class DisplayInfoFile extends Component {
   handleDelete =(idxComment) => {
     console.log(idxComment);
     // console.log(document.getElementById(`displaycomments`).children[cellIndex].children[1].textContent);
-    fetch('http://localhost:3000/deletecomment',{
+    fetch('https://git.heroku.com/orientation-back.git/deletecomment',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({

@@ -19,7 +19,7 @@ class Historique extends Component {
 
       testEmpty = () => {
         console.log('testEmpty');
-        fetch('http://localhost:3000/requests',{
+        fetch('https://git.heroku.com/orientation-back.git/requests',{
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({

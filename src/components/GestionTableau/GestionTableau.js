@@ -153,7 +153,7 @@ class GestionTableau extends Component {
 
       loadDatabasePP = () => {
         console.log(this.props.user.resp);
-        fetch('http://localhost:3000/resp',{
+        fetch('https://git.heroku.com/orientation-back.git/resp',{
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -199,7 +199,7 @@ class GestionTableau extends Component {
         const answer = await Promise.all(students.map( async student => {
           const answer2 = await Promise.all(docs.map( async doc => {
 
-              const response = await fetch('http://localhost:3000/copy_folder',{
+              const response = await fetch('https://git.heroku.com/orientation-back.git/copy_folder',{
                   method: 'post',
                   headers: {'Content-Type': 'application/json'},
                   body: JSON.stringify({
@@ -213,7 +213,7 @@ class GestionTableau extends Component {
               // console.log(response);
 
                 // const response2 = await
-                fetch('http://localhost:3000/copy_file',{
+                fetch('https://git.heroku.com/orientation-back.git/copy_file',{
                     method: 'post',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
@@ -243,7 +243,7 @@ class GestionTableau extends Component {
 
       loadDatabaseComments = async () => {
         console.log(this.props.user, this.state.infoLink);
-        const answer = await fetch('http://localhost:3000/displaycomments2',{
+        const answer = await fetch('https://git.heroku.com/orientation-back.git/displaycomments2',{
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -351,7 +351,7 @@ class GestionTableau extends Component {
         this.modifClasse(str);
         let liste = this.filtrage2(this.state.rows);
         const answer = await Promise.all(liste.map( async elt => {
-          const response = await fetch('http://localhost:3000/updateclass',{
+          const response = await fetch('https://git.heroku.com/orientation-back.git/updateclass',{
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -378,7 +378,7 @@ class GestionTableau extends Component {
       messageClasse = async (user) => {
         var str = prompt("Message :");
         if (str != null && str !== "") {
-          const response = await fetch('http://localhost:3000/messageclasse',{
+          const response = await fetch('https://git.heroku.com/orientation-back.git/messageclasse',{
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -474,7 +474,7 @@ class GestionTableau extends Component {
         exportDatabase = async () => {
         	let liste = this.filtrage2(this.state.rows);
           const answer = await Promise.all(liste.map( async elt => {
-          const response = await fetch('http://localhost:3000/register',{
+          const response = await fetch('https://git.heroku.com/orientation-back.git/register',{
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -542,7 +542,7 @@ class GestionTableau extends Component {
             boolSynth: true
           })
 
-          const response = await fetch('http://localhost:3000/synthesefiles',{
+          const response = await fetch('https://git.heroku.com/orientation-back.git/synthesefiles',{
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -558,7 +558,7 @@ class GestionTableau extends Component {
         deleteData = async () => {
         	let liste = this.filtrage2(this.state.rows);
           const answer = await Promise.all(liste.map( async elt => {
-          const response = await fetch('http://localhost:3000/delete_user',{
+          const response = await fetch('https://git.heroku.com/orientation-back.git/delete_user',{
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -647,7 +647,7 @@ class GestionTableau extends Component {
           console.log(liste);
           const choice = window.confirm('Voulez-vous mettre à jour la base de données ?')
           if (choice) {
-            const response = await fetch('http://localhost:3000/updateadminuser',{
+            const response = await fetch('https://git.heroku.com/orientation-back.git/updateadminuser',{
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -697,7 +697,7 @@ class GestionTableau extends Component {
                 [elt] : true
               }),
               {});
-            const response = await fetch('http://localhost:3000/updateuser',{
+            const response = await fetch('https://git.heroku.com/orientation-back.git/updateuser',{
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -770,7 +770,7 @@ class GestionTableau extends Component {
                 this.forceUpdate();
                 console.log(filteredUsers[i][this.props.properties[j]],k);
 
-                fetch('http://localhost:3000/updateuser',{
+                fetch('https://git.heroku.com/orientation-back.git/updateuser',{
                   method: 'post',
                   headers: {'Content-Type': 'application/json'},
                   body: JSON.stringify({

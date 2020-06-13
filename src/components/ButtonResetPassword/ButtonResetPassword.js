@@ -39,7 +39,7 @@ class ButtonResetPassword extends Component {
       reinit = async (liste) => {
           const answer = await Promise.all(liste.map( async elt => {
           console.log(elt);
-          const response = await fetch('http://localhost:3000/resetpassword',{
+          const response = await fetch('https://git.heroku.com/orientation-back.git/resetpassword',{
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
