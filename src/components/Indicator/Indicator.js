@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../Table/Table.css';
-import Tooltip from '../../../node_modules/@material-ui/core/Tooltip';
 
 
 
@@ -19,12 +18,8 @@ class Indicator extends Component {
 
       {if (content.text !== '') {
         return(
-          <Tooltip
-        title={text}
-        placement="top"
-                >
-                <p contentEditable={false} style={divStyle} className="br4 f6 link dim black pa0 ph2 mt0 mv0 b--black"> {content.value}% </p>
-          </Tooltip>
+
+            <p contentEditable={false} style={divStyle} className="br4 f6 link dim black pa0 ph2 mt0 mv0 b--black"> {content.value}% </p>
         );
       } else {return null}
     }
