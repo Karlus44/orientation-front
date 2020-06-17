@@ -42,7 +42,7 @@ class Documents extends Component {
       //   }
       axios({
           method: "POST",
-          url:"https://orientation-back.herokuapp.com//upload",
+          url:"https://orientation-back.herokuapp.com/upload",
           headers: {'Content-Type': 'multipart/form-data'},
           data: formData,
       })
