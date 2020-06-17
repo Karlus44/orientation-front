@@ -15,7 +15,7 @@ class ButtonResetPassword extends Component {
         console.log(messageHtml);
         axios({
             method: "POST",
-            url:"http://localhost:3000/send",
+            url:"https://orientation-back.herokuapp.com//send",
             data: {
       	email: elt.user.user,
       	messageHtml: messageHtml

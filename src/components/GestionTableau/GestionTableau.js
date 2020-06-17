@@ -119,7 +119,7 @@ class GestionTableau extends Component {
 
       loadDatabase = () => {
         console.log(this.props.user.admin);
-        fetch('http://localhost:3000',{
+        fetch('https://orientation-back.herokuapp.com/',{
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
