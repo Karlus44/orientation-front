@@ -21,7 +21,7 @@ class Notifications extends Component {
 
 
       loadDatabase = () => {
-        fetch('https://git.heroku.com/orientation-back.git/displaynotifications',{
+        fetch('https://orientation-back.herokuapp.com/displaynotifications',{
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({

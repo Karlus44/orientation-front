@@ -11,7 +11,7 @@ class ButtonCancelRequest extends Component {
 
 
         cancel = async (mail) => {
-            const response = await fetch('https://git.heroku.com/orientation-back.git/cancelrequest',{
+            const response = await fetch('https://orientation-back.herokuapp.com/cancelrequest',{
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({

@@ -29,7 +29,7 @@ class SignIn extends React.Component {
   sendPassword = async () => {
     var mail= prompt('Veuillez entrer votre adresse mail');
     if (mail===null){return; }
-    const response = await fetch('https://git.heroku.com/orientation-back.git/requestpassword',{
+    const response = await fetch('https://orientation-back.herokuapp.com/requestpassword',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -42,7 +42,7 @@ class SignIn extends React.Component {
 
   onSubmitSignIn = () => {
     console.log(this.state);
-    fetch('https://git.heroku.com/orientation-back.git/signin',{
+    fetch('https://orientation-back.herokuapp.com/signin',{
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

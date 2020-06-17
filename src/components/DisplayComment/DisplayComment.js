@@ -16,7 +16,7 @@ class DisplayComment extends Component {
       handleDeleteComment= async (event) => {
         if (event.key === 'Enter') {
           console.log('delete', this.props.key, this.props.cellIndex);
-          //   const response = await fetch('https://git.heroku.com/orientation-back.git/addcomment',{
+          //   const response = await fetch('https://orientation-back.herokuapp.com/addcomment',{
           //     method: 'post',
           //     headers: {'Content-Type': 'application/json'},
           //     body: JSON.stringify({

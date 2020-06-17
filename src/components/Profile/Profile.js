@@ -63,7 +63,7 @@ class Profile extends React.Component {
     console.log(this.state);
     if (this.state.newPassword1===this.state.newPassword2) {
     this.setState({errorLogin: false});
-    fetch('https://git.heroku.com/orientation-back.git/changepassword',{
+    fetch('https://orientation-back.herokuapp.com/changepassword',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -111,7 +111,7 @@ class Profile extends React.Component {
 
 
   onValideChangements = () => {
-    fetch('https://git.heroku.com/orientation-back.git/validechangements',{
+    fetch('https://orientation-back.herokuapp.com/validechangements',{
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -153,7 +153,7 @@ class Profile extends React.Component {
   }
 
   checkReferents = async user => {
-    const response = await fetch('https://git.heroku.com/orientation-back.git/checkprofs',{
+    const response = await fetch('https://orientation-back.herokuapp.com/checkprofs',{
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

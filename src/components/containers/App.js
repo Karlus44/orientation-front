@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://git.heroku.com/orientation-back.git/testempty',{
+    fetch('https://orientation-back.herokuapp.com/testempty',{
       method: 'get',
       headers: {'Content-Type': 'application/json'},
     })

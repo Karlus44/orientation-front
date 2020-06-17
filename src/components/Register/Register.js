@@ -50,7 +50,7 @@ class Register extends React.Component {
     console.log(this.state);
     if (this.state.registerInitialPassword===this.state.registerInitialPassword2) {
     this.setState({errorLogin: false});
-    fetch('https://git.heroku.com/orientation-back.git/firstuser',{
+    fetch('https://orientation-back.herokuapp.com/firstuser',{
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
