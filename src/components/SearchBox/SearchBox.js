@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SearchBox = ({searchfield, searchChange}) => {
+class SearchBox extends Component {
+// const SearchBox = ({searchfield, searchChange}) => {
+componentWillUnmount() {
+      const fakeEvent={target:{value:''}};
+      this.props.searchChange(fakeEvent);
+  }
+
+render() {
+  const {searchfield, searchChange}=this.props;
   return(
     <div className='pa2'>
     <input
@@ -12,5 +20,6 @@ const SearchBox = ({searchfield, searchChange}) => {
     />
     </div>
   );
+  }
 }
 export default SearchBox;
