@@ -32,6 +32,7 @@ class Table extends Component {
         const {Liste, idx, colnames} = this.props;
         const mail = Object.values(Liste[rowIndex])[idx];
         console.log(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom));
+        console.log(path.isAbsolute(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom)));
         // console.log(idx);
         // console.log(Object.values(Liste[rowIndex]));
         // console.log(mail);
