@@ -31,8 +31,8 @@ class Table extends Component {
       renderRow = (_row, rowIndex) => {
         const {Liste, idx, colnames} = this.props;
         const mail = Object.values(Liste[rowIndex])[idx];
-        console.log(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom));
-        console.log(path.isAbsolute(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom)));
+        console.log(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c"));
+        console.log(path.isAbsolute(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c")));
         // console.log(idx);
         // console.log(Object.values(Liste[rowIndex]));
         // console.log(mail);
