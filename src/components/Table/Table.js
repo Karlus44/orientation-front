@@ -107,7 +107,7 @@ class Table extends Component {
           : null}
               {this.props.type==='files-prof' || this.props.type==='files-admin' || this.props.type==='files-eleve' ?
                 <td>
-                    <a href = {path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom)}  download
+                    <a href = {path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c")}  download
                       className="bg-light-green br4 f6 link dim black pa0 ph2 mt0 mv0 b--black">Ouvrir</a>
                   </td>
             : null}
