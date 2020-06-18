@@ -5,6 +5,7 @@ import Checkbox from '../Checkbox/Checkbox';
 import AfficheLigne from '../AfficheLigne/AfficheLigne';
 import Rater from 'react-rater'
 import './Table.css';
+const path = require('path');
 // import '../../../node_modules/react-rater/lib/react-rater.css'
 
 
@@ -104,7 +105,7 @@ class Table extends Component {
           : null}
               {this.props.type==='files-prof' || this.props.type==='files-admin' || this.props.type==='files-eleve' ?
                 <td>
-                    <a href = {Liste[rowIndex].Lien.split('/').slice(1).join('/')+'/'+Liste[rowIndex].Nom}  download
+                    <a href = {path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom)}  download
                       className="bg-light-green br4 f6 link dim black pa0 ph2 mt0 mv0 b--black">Ouvrir</a>
                   </td>
             : null}
