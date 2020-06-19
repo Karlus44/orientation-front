@@ -29,20 +29,15 @@ class Table extends Component {
 
 
       renderRow = (_row, rowIndex) => {
+        console.log(Liste[rowIndex]);
         const {Liste, idx, colnames} = this.props;
         const mail = Object.values(Liste[rowIndex])[idx];
-        console.log(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c"));
-        console.log(path.isAbsolute(path.join(Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c")));
-        // console.log(idx);
-        // console.log(Object.values(Liste[rowIndex]));
-        // console.log(mail);
         const bool = this.props.cocheList[`${mail}`];
         const bool2 = Liste[rowIndex].admin;
         const bool3 = this.props.toggleList[`${mail}`];
         var bool4 = false;
         if (this.props.type==='admin-data') {
           if ('resp' in Liste[rowIndex]) {
-            // console.log(Liste[rowIndex]);
             if (Object.keys(Liste[rowIndex].resp).length) {
               // console.log(Object.keys(Liste[rowIndex].resp).length);
               bool4=true;
