@@ -29,8 +29,8 @@ class Table extends Component {
 
 
       renderRow = (_row, rowIndex) => {
-        console.log(Liste[rowIndex]);
         const {Liste, idx, colnames} = this.props;
+        console.log(Liste[rowIndex]);
         const mail = Object.values(Liste[rowIndex])[idx];
         const bool = this.props.cocheList[`${mail}`];
         const bool2 = Liste[rowIndex].admin;
