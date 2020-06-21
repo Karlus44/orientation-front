@@ -7,26 +7,13 @@ class Documents extends Component {
         this.state = {
           title : '',
           file : null,
-          desc : 'Description de votre fichier'
+          desc : 'Description de votre fichier',
+          size : 0,
         };
       }
 
-      // componentDidMount() {
-      //       this.setState({
-      //         title : '',
-      //         file : null,
-      //         desc : 'Description de votre fichier'
-      //       });
-      //   }
 
       fileHandler = (event) => {
-
-      // let fileObj = event.target.files[0];
-      // console.log(fileObj);
-      // this.setState({
-      //     selectedFile: fileObj,
-      //     // loaded: 0,
-      // });
 
       if (this.state.file.size < 101) {
 
@@ -37,9 +24,6 @@ class Documents extends Component {
       formData.append('mail', this.props.user.mail);
       formData.append('author', this.props.user.prénom+' '+this.props.user.nom);
       formData.append('file', this.state.file);
-      // for (var p of data) {
-      //     console.log(p);
-      //   }
       axios({
           method: "POST",
           url:"https://orientation-back.herokuapp.com/upload",
@@ -84,7 +68,8 @@ class Documents extends Component {
                  <input type="file" name="fichier"
                    onChange={(e) => this.setState({file: e.target.files[0],
                                                   title: e.target.files[0].name,
-                                                  desc: 'Description de votre fichier'
+                                                  desc: 'Description de votre fichier',
+                                                  size: e.target.files[0].size
                                                 })} />
                  </label>
                  <br />
