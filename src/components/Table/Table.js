@@ -13,7 +13,20 @@ class Table extends Component {
       // constructor(props){
       //   super(props)
       // }
+      this.state= { url:''}
 
+componentDidMount() {
+  this.getConfigVar();
+}
+      getConfigVar= async () => {
+        const url = fetch('https://orientation-back.herokuapp.com/getconfigvar',{
+          method: 'get',
+          headers: {'Content-Type': 'application/json'},
+        })
+        .then(response => response.json())
+        .then(response => setState({url: response.url})
+
+      }
 
       renderHeadingRow = (_cell, cellIndex) => {
         const {colnames} = this.props;
@@ -36,8 +49,8 @@ class Table extends Component {
         const bool2 = Liste[rowIndex].admin;
         const bool3 = this.props.toggleList[`${mail}`];
         var bool4 = false;
-        var url=process.env.CLOUDCUBE_URL;
-        console.log(process.env);
+        var url=this.state.url;
+        console.log(url);
         if (this.props.type==='admin-data') {
           if ('resp' in Liste[rowIndex]) {
             if (Object.keys(Liste[rowIndex].resp).length) {
@@ -162,13 +175,6 @@ class Table extends Component {
       render() {
 
       const { Liste, colnames} =this.props;
-      const url = fetch('https://orientation-back.herokuapp.com/getconfigvar',{
-        method: 'get',
-        headers: {'Content-Type': 'application/json'},
-      })
-      .then(response => response.json())
-
-      console.log(url);
 
       const bool7 = this.props.type==='files-prof' || this.props.type==='files-admin' || this.props.type==='admin-data' || this.props.type==='pp-data' || this.props.type==='files-eleve';
 
