@@ -10,10 +10,10 @@ const path = require('path');
 
 
 class Table extends Component {
-      // constructor(props){
-      //   super(props)
-      // }
-      this.state= { url:''}
+  constructor(props){
+    super(props);
+    this.state= { url:''};
+  }
 
 componentDidMount() {
   this.getConfigVar();
