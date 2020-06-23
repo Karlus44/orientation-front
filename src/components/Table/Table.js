@@ -36,6 +36,8 @@ class Table extends Component {
         const bool2 = Liste[rowIndex].admin;
         const bool3 = this.props.toggleList[`${mail}`];
         var bool4 = false;
+        const url=process.env.CLOUDCUBE_URL;
+        console.log(url, typeof url);
         if (this.props.type==='admin-data') {
           if ('resp' in Liste[rowIndex]) {
             if (Object.keys(Liste[rowIndex].resp).length) {
@@ -102,7 +104,7 @@ class Table extends Component {
           : null}
               {this.props.type==='files-prof' || this.props.type==='files-admin' || this.props.type==='files-eleve' ?
                 <td>
-                    <a href = {path.join(process.env.CLOUDCUBE_URL,Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c")}  download
+                    <a href = {path.join(url,Liste[rowIndex].Lien, Liste[rowIndex].Nom).replace("https:/c", "https://c")}  download
                       className="bg-light-green br4 f6 link dim black pa0 ph2 mt0 mv0 b--black">Ouvrir</a>
                   </td>
             : null}
