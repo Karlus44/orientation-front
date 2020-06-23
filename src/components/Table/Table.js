@@ -36,7 +36,7 @@ class Table extends Component {
         const bool2 = Liste[rowIndex].admin;
         const bool3 = this.props.toggleList[`${mail}`];
         var bool4 = false;
-        // const url=process.env.CLOUDCUBE_URL;
+        var url=process.env.CLOUDCUBE_URL;
         console.log(process.env);
         if (this.props.type==='admin-data') {
           if ('resp' in Liste[rowIndex]) {
@@ -162,6 +162,14 @@ class Table extends Component {
       render() {
 
       const { Liste, colnames} =this.props;
+      const url = fetch('https://orientation-back.herokuapp.com/getconfigvar',{
+        method: 'get',
+        headers: {'Content-Type': 'application/json'},
+      })
+      .then(response => response.json())
+
+      console.log(url);
+
       const bool7 = this.props.type==='files-prof' || this.props.type==='files-admin' || this.props.type==='admin-data' || this.props.type==='pp-data' || this.props.type==='files-eleve';
 
 
