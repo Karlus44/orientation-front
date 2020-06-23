@@ -24,7 +24,7 @@ componentDidMount() {
           headers: {'Content-Type': 'application/json'},
         })
         .then(response => response.json())
-        .then(response => setState({url: response.url})
+        .then(response => setState({url: response.url}))
 
       }
 
