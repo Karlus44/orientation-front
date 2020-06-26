@@ -43,14 +43,14 @@ componentDidMount() {
 
       renderRow = (_row, rowIndex) => {
         const {Liste, idx, colnames} = this.props;
-        console.log(Liste[rowIndex]);
+        // console.log(Liste[rowIndex]);
         const mail = Object.values(Liste[rowIndex])[idx];
         const bool = this.props.cocheList[`${mail}`];
         const bool2 = Liste[rowIndex].admin;
         const bool3 = this.props.toggleList[`${mail}`];
         var bool4 = false;
         var url=this.state.url;
-        console.log(url);
+        // console.log(url);
         if (this.props.type==='admin-data') {
           if ('resp' in Liste[rowIndex]) {
             if (Object.keys(Liste[rowIndex].resp).length) {
